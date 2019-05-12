@@ -1,7 +1,7 @@
 FROM openjdk:8-jre-alpine
 
-EXPOSE 8070
+COPY target/file-demo.jar /app/
 
-COPY target/file-demo-0.0.1-SNAPSHOT.jar /app/
+EXPOSE 8080
 
-CMD java -jar /app/file-demo-0.0.1-SNAPSHOT.jar 
+CMD java -jar /app/file-demo.jar --spring.profiles.active=prod
